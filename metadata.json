@@ -1,8 +1,0 @@
-{
-  "name": "Aether Code AI",
-  "description": "A world-class AI-powered full-stack coding assistant with integrated terminal, file explorer, and multi-provider simulation.",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ]
-}
