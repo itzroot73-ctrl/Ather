@@ -71,10 +71,15 @@ io.on('connection', (socket) => {
         botData.status = 'online';
         io.emit('bot-status', { id, status: 'online' });
 
+        // Clear any existing timer before starting a new one
+        if (botData.adTimer) clearInterval(botData.adTimer);
+
         // Start Ad interval
         if (botData.adMessage) {
           botData.adTimer = setInterval(() => {
-            bot.chat(botData.adMessage);
+            if (botData.status === 'online') {
+              bot.chat(botData.adMessage);
+            }
           }, botData.adInterval);
         }
       });
@@ -126,7 +131,7 @@ io.on('connection', (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 httpServer.listen(PORT, () => {
   console.log(`Bot manager server running on port ${PORT}`);
 });

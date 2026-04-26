@@ -69,7 +69,7 @@ const MinecraftBotPanel: React.FC = () => {
   const logsEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:3001');
+    const newSocket = io('http://localhost:3002');
     setSocket(newSocket);
 
     newSocket.on('connect', () => setIsConnected(true));
