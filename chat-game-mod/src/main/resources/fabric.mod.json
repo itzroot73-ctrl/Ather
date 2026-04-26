@@ -1,0 +1,25 @@
+{
+	"schemaVersion": 1,
+	"id": "chatgame",
+	"version": "${version}",
+	"name": "Chat Game Solver",
+	"description": "Automatically solves chat games with a delay.",
+	"authors": [
+		"Jules"
+	],
+	"contact": {},
+	"license": "MIT",
+	"icon": "assets/chatgame/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.example.chatgame.ChatGameClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.16.0",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
